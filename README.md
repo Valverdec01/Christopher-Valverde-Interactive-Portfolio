@@ -1,20 +1,21 @@
-## Christopher Valverde
+# Christopher Valverde
 
 ### I recently graduated from Florida State University with a B.S. in information technology with a focus on learning sql, database and software development. I currently am located in Miami Florida, but I am willing to travel across the state for work
 
 ### Throughout my time at Florida State I completed different classes that have taught different skills within this field. Below I have links to these projects showcasing what I have learned in these classes
 
 1. [LIS3781 - Advanced Database Management](lis3781/README.md "Link to Lis3781 projects")
-**Course decription:**In this course, I explored a diverse range of topics related to Database Management Systems (DBMSs) and data repositories, gaining proficiency in industry-standard commercial DBMSs such as MySQL, SQL Server, and Oracle, as well as non-relational data repositories (NoSQL databases). Throughout the course I delved into the fundamental concepts of data administration, data modeling, table design, and sql queries.  
 
-**Course Objctives:**
-* Explore topics in database management systems (DBMSs) and NoSQL databases.
-* Learn industry-standard commercial DBMSs: MySQL, SQL Server, Oracle.
-* Study non-relational data repositories: NoSQL databases.
-* Cover administration, security, stored procedures, triggers, transactions, functions, data mining, data warehousing, data analytics, remote access, and distributed version control systems
-* Demonstrate understanding through creating, deploying, and utilizing relational and non-relational database designs
+	* **Course decription:**In this course, I explored a diverse range of topics related to Database Management Systems (DBMSs) and data repositories, gaining proficiency in industry-standard commercial DBMSs such as MySQL, SQL Server, and Oracle, as well as non-relational data repositories (NoSQL databases). Throughout the course I delved into the fundamental concepts of data administration, data modeling, table design, and sql queries.  
 
-2. [LIS4368 - Advanced Web Application Development](lis4368/README.md "Link to Lis4368 projects")
+	* **Course Objctives:**
+	* Explore topics in database management systems (DBMSs) and NoSQL databases.
+	* Learn industry-standard commercial DBMSs: MySQL, SQL Server, Oracle.
+	* Study non-relational data repositories: NoSQL databases.
+	* Cover administration, security, stored procedures, triggers, transactions, functions, data mining, data warehousing, data analytics, remote access, and distributed version 	control systems
+	* Demonstrate understanding through creating, deploying, and utilizing relational and non-relational database designs
+
+2. [LIS4368 - Advanced Web Application Development](lis4368/README.md "Link to Lis4368 projects")\
 **Course decription:** This course laid a strong foundation in web application development, focusing on server-side concepts, tools, and methods. I gained expertise in basic web application programming and advanced object-oriented (OOP) techniques, empowering me to create dynamic and interactive web applications.
 
 **Course Objctives:**
@@ -26,7 +27,7 @@
 * Create client- and server-side data validation.
 
 
-3. [LIS4369 - Extensible Enterprise Solutions (Python)](lis4369/README.md "Link to Lis4369 projects")
+3. [LIS4369 - Extensible Enterprise Solutions (Python)](lis4369/README.md "Link to Lis4369 projects")\ 
 **Course decription:** Employing skills to work within proprietary and nonproprietary web application frameworks allow developers to build dynamic web sites and applications in conjuction with data repositories and XML web services. This course utilizes industry-standard tools and techniques to create enterprise class applications
 
 **Course Objctives:**
@@ -41,7 +42,7 @@
 * Design and employ databases to build professional quality, data-driven applications, using propietary and open source technologies and employ user interfaces to read from and write to databases
 * Create individual development enviroment using android studio
 
-5. [LIS4930 - Exploration into AI, Machine and Deep Learning](lis4930/README.md "Link to Lis4381 projects")
+5. [LIS4930 - Exploration into AI, Machine and Deep Learning](lis4930/README.md "Link to Lis4381 projects")\
 **Course decription:** This course provided an explorative introduction to the fascinating world of artificial intelligence (AI), machine learning, and deep learning. Throughout the course, I discovered the incredible potential of AI in areas such as weather forecasting, business needs assessment, medical and health analytics, computer and security surveillance, farm science, energy production, urban planning, image and biometric analysis, and recognition, among many other useful applications
 
 **Course Objctives:**
