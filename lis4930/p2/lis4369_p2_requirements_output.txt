@@ -1,0 +1,559 @@
+
+> cat("###################################################################################","\n")
+################################################################################### 
+
+> cat("R Language Reference Notes:\n",
++     "\tUse head and tail to look at first few and last few records.\n",
++     "\tUse str and names to look at ..." ... [TRUNCATED] 
+R Language Reference Notes:
+ 	Use head and tail to look at first few and last few records.
+ 	Use str and names to look at structure and column names of a data frame.
+ 	Use $ notation to look at a particular column name.
+ 	Use [] square brakcets (row,column) notation to look at a particular value.
+
+ 	Also, conditional section in R:
+ 	Select data in I row and J column (one field) for DataFrameX: DataFrame[I,J]
+ 	Alternatively:
+ 	Data in I row: DataFrameX[I,] # display row/record I with column names
+ 	Data in J column: DataFrameX$J_Column_Name, or DataFrameX[,J]
+ 	NOTE: R uses 1 for first record/row. Pyton uses 0! 
+
+
+> cat("*** Assignment Requirements ***","\n\n")
+*** Assignment Requirements *** 
+
+
+> cat("1. Use Assignment 5 Screenshots and R Manual to backward-engineer the following requirements:","\n")
+1. Use Assignment 5 Screenshots and R Manual to backward-engineer the following requirements: 
+
+> cat("2. Resources:\n",
++     "\ta. R Manual: https://cran.r-project.org/doc/manuals/r-release/R-lang.pdf\n",
++     "\tb. b. R for Data Science: http ..." ... [TRUNCATED] 
+2. Resources:
+ 	a. R Manual: https://cran.r-project.org/doc/manuals/r-release/R-lang.pdf
+ 	b. b. R for Data Science: https://r4ds.had.co.nz/ 
+
+> cat("3. Use Motor Trend Car Road Tests data:\n",
++     "\ta. Research the data! https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/mtcars.h ..." ... [TRUNCATED] 
+3. Use Motor Trend Car Road Tests data:
+ 	a. Research the data! https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/mtcars.html
+ 	b. url = "http://vincentarelbundock.github.io/Rdatasets/csv/datasets/mtcars.csv" 
+
+> cat("Note: Use variable \"mtcars\" to read file into. (See Assignment 5 for reading .csv files.)","\n")
+Note: Use variable "mtcars" to read file into. (See Assignment 5 for reading .csv files.) 
+
+> cat("###################################################", "\n\n")
+################################################### 
+
+
+> url = "http://vincentarelbundock.github.io/Rdatasets/csv/datasets/mtcars.csv"
+
+> mtcars <- read.csv(file=url,head=TRUE,sep=",")
+
+> cat("*** Report/Command Requirements ***","\n")
+*** Report/Command Requirements *** 
+
+> cat("1) Display all data from file:","\n")
+1) Display all data from file: 
+
+> mtcars
+                     X  mpg cyl  disp  hp drat    wt
+1            Mazda RX4 21.0   6 160.0 110 3.90 2.620
+2        Mazda RX4 Wag 21.0   6 160.0 110 3.90 2.875
+3           Datsun 710 22.8   4 108.0  93 3.85 2.320
+4       Hornet 4 Drive 21.4   6 258.0 110 3.08 3.215
+5    Hornet Sportabout 18.7   8 360.0 175 3.15 3.440
+6              Valiant 18.1   6 225.0 105 2.76 3.460
+7           Duster 360 14.3   8 360.0 245 3.21 3.570
+8            Merc 240D 24.4   4 146.7  62 3.69 3.190
+9             Merc 230 22.8   4 140.8  95 3.92 3.150
+10            Merc 280 19.2   6 167.6 123 3.92 3.440
+11           Merc 280C 17.8   6 167.6 123 3.92 3.440
+12          Merc 450SE 16.4   8 275.8 180 3.07 4.070
+13          Merc 450SL 17.3   8 275.8 180 3.07 3.730
+14         Merc 450SLC 15.2   8 275.8 180 3.07 3.780
+15  Cadillac Fleetwood 10.4   8 472.0 205 2.93 5.250
+16 Lincoln Continental 10.4   8 460.0 215 3.00 5.424
+17   Chrysler Imperial 14.7   8 440.0 230 3.23 5.345
+18            Fiat 128 32.4   4  78.7  66 4.08 2.200
+19         Honda Civic 30.4   4  75.7  52 4.93 1.615
+20      Toyota Corolla 33.9   4  71.1  65 4.22 1.835
+21       Toyota Corona 21.5   4 120.1  97 3.70 2.465
+22    Dodge Challenger 15.5   8 318.0 150 2.76 3.520
+23         AMC Javelin 15.2   8 304.0 150 3.15 3.435
+24          Camaro Z28 13.3   8 350.0 245 3.73 3.840
+25    Pontiac Firebird 19.2   8 400.0 175 3.08 3.845
+26           Fiat X1-9 27.3   4  79.0  66 4.08 1.935
+27       Porsche 914-2 26.0   4 120.3  91 4.43 2.140
+28        Lotus Europa 30.4   4  95.1 113 3.77 1.513
+29      Ford Pantera L 15.8   8 351.0 264 4.22 3.170
+30        Ferrari Dino 19.7   6 145.0 175 3.62 2.770
+31       Maserati Bora 15.0   8 301.0 335 3.54 3.570
+32          Volvo 142E 21.4   4 121.0 109 4.11 2.780
+    qsec vs am gear carb
+1  16.46  0  1    4    4
+2  17.02  0  1    4    4
+3  18.61  1  1    4    1
+4  19.44  1  0    3    1
+5  17.02  0  0    3    2
+6  20.22  1  0    3    1
+7  15.84  0  0    3    4
+8  20.00  1  0    4    2
+9  22.90  1  0    4    2
+10 18.30  1  0    4    4
+11 18.90  1  0    4    4
+12 17.40  0  0    3    3
+13 17.60  0  0    3    3
+14 18.00  0  0    3    3
+15 17.98  0  0    3    4
+16 17.82  0  0    3    4
+17 17.42  0  0    3    4
+18 19.47  1  1    4    1
+19 18.52  1  1    4    2
+20 19.90  1  1    4    1
+21 20.01  1  0    3    1
+22 16.87  0  0    3    2
+23 17.30  0  0    3    2
+24 15.41  0  0    3    4
+25 17.05  0  0    3    2
+26 18.90  1  1    4    1
+27 16.70  0  1    5    2
+28 16.90  1  1    5    2
+29 14.50  0  1    5    4
+30 15.50  0  1    5    6
+31 14.60  0  1    5    8
+32 18.60  1  1    4    2
+
+> cat("\n", "2) Display 1st 10 records:","\n")
+
+ 2) Display 1st 10 records: 
+
+> head(mtcars,10)
+                   X  mpg cyl  disp  hp drat    wt  qsec
+1          Mazda RX4 21.0   6 160.0 110 3.90 2.620 16.46
+2      Mazda RX4 Wag 21.0   6 160.0 110 3.90 2.875 17.02
+3         Datsun 710 22.8   4 108.0  93 3.85 2.320 18.61
+4     Hornet 4 Drive 21.4   6 258.0 110 3.08 3.215 19.44
+5  Hornet Sportabout 18.7   8 360.0 175 3.15 3.440 17.02
+6            Valiant 18.1   6 225.0 105 2.76 3.460 20.22
+7         Duster 360 14.3   8 360.0 245 3.21 3.570 15.84
+8          Merc 240D 24.4   4 146.7  62 3.69 3.190 20.00
+9           Merc 230 22.8   4 140.8  95 3.92 3.150 22.90
+10          Merc 280 19.2   6 167.6 123 3.92 3.440 18.30
+   vs am gear carb
+1   0  1    4    4
+2   0  1    4    4
+3   1  1    4    1
+4   1  0    3    1
+5   0  0    3    2
+6   1  0    3    1
+7   0  0    3    4
+8   1  0    4    2
+9   1  0    4    2
+10  1  0    4    4
+
+> cat("\n", "3.) Display last 10 records:","\n")
+
+ 3.) Display last 10 records: 
+
+> tail(mtcars,10)
+                  X  mpg cyl  disp  hp drat    wt  qsec
+23      AMC Javelin 15.2   8 304.0 150 3.15 3.435 17.30
+24       Camaro Z28 13.3   8 350.0 245 3.73 3.840 15.41
+25 Pontiac Firebird 19.2   8 400.0 175 3.08 3.845 17.05
+26        Fiat X1-9 27.3   4  79.0  66 4.08 1.935 18.90
+27    Porsche 914-2 26.0   4 120.3  91 4.43 2.140 16.70
+28     Lotus Europa 30.4   4  95.1 113 3.77 1.513 16.90
+29   Ford Pantera L 15.8   8 351.0 264 4.22 3.170 14.50
+30     Ferrari Dino 19.7   6 145.0 175 3.62 2.770 15.50
+31    Maserati Bora 15.0   8 301.0 335 3.54 3.570 14.60
+32       Volvo 142E 21.4   4 121.0 109 4.11 2.780 18.60
+   vs am gear carb
+23  0  0    3    2
+24  0  0    3    4
+25  0  0    3    2
+26  1  1    4    1
+27  0  1    5    2
+28  1  1    5    2
+29  0  1    5    4
+30  0  1    5    6
+31  0  1    5    8
+32  1  1    4    2
+
+> cat("\n", "4) Display file structure (see notes above):","\n")
+
+ 4) Display file structure (see notes above): 
+
+> str(mtcars)
+'data.frame':	32 obs. of  12 variables:
+ $ X   : chr  "Mazda RX4" "Mazda RX4 Wag" "Datsun 710" "Hornet 4 Drive" ...
+ $ mpg : num  21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...
+ $ cyl : int  6 6 4 6 8 6 8 4 4 6 ...
+ $ disp: num  160 160 108 258 360 ...
+ $ hp  : int  110 110 93 110 175 105 245 62 95 123 ...
+ $ drat: num  3.9 3.9 3.85 3.08 3.15 2.76 3.21 3.69 3.92 3.92 ...
+ $ wt  : num  2.62 2.88 2.32 3.21 3.44 ...
+ $ qsec: num  16.5 17 18.6 19.4 17 ...
+ $ vs  : int  0 0 1 1 0 1 0 1 1 1 ...
+ $ am  : int  1 1 1 0 0 0 0 0 0 0 ...
+ $ gear: int  4 4 4 3 3 3 3 4 4 4 ...
+ $ carb: int  4 4 1 1 2 1 4 2 2 4 ...
+
+> cat("\n", "5) Display column names (see notes above):","\n")
+
+ 5) Display column names (see notes above): 
+
+> names(mtcars)
+ [1] "X"    "mpg"  "cyl"  "disp" "hp"   "drat" "wt"  
+ [8] "qsec" "vs"   "am"   "gear" "carb"
+
+> cat("\n", "6) Display 1st record/row with column names (see notes above):","\n")
+
+ 6) Display 1st record/row with column names (see notes above): 
+
+> mtcars[1,]
+          X mpg cyl disp  hp drat   wt  qsec vs am gear
+1 Mazda RX4  21   6  160 110  3.9 2.62 16.46  0  1    4
+  carb
+1    4
+
+> cat("\n", "7) Display 2nd column data (mpg), using column number:","\n",
++     "Note: does *not* include column name", "\n")
+
+ 7) Display 2nd column data (mpg), using column number: 
+ Note: does *not* include column name 
+
+> mtcars[2,]
+              X mpg cyl disp  hp drat    wt  qsec vs am
+2 Mazda RX4 Wag  21   6  160 110  3.9 2.875 17.02  0  1
+  gear carb
+2    4    4
+
+> cat("\n", "8) Display column data (cyl), using column name:","\n",
++     "Note: return does *not* display column name","\n")
+
+ 8) Display column data (cyl), using column name: 
+ Note: return does *not* display column name 
+
+> mtcars$cyl
+ [1] 6 6 4 6 8 6 8 4 4 6 6 8 8 8 8 8 8 4 4 4 4 8 8 8 8 4
+[27] 4 4 8 6 8 4
+
+> cat("\n", "9) Display row/column data (3,4), that is, one field, using square bracket notation (see above):","\n")
+
+ 9) Display row/column data (3,4), that is, one field, using square bracket notation (see above): 
+
+> mtcars[3,4]
+[1] 108
+
+> cat("\n", "10) Display all data for cars having greater than 4 cylinders:","\n")
+
+ 10) Display all data for cars having greater than 4 cylinders: 
+
+> mtcars[mtcars$cyl>4,]
+                     X  mpg cyl  disp  hp drat    wt
+1            Mazda RX4 21.0   6 160.0 110 3.90 2.620
+2        Mazda RX4 Wag 21.0   6 160.0 110 3.90 2.875
+4       Hornet 4 Drive 21.4   6 258.0 110 3.08 3.215
+5    Hornet Sportabout 18.7   8 360.0 175 3.15 3.440
+6              Valiant 18.1   6 225.0 105 2.76 3.460
+7           Duster 360 14.3   8 360.0 245 3.21 3.570
+10            Merc 280 19.2   6 167.6 123 3.92 3.440
+11           Merc 280C 17.8   6 167.6 123 3.92 3.440
+12          Merc 450SE 16.4   8 275.8 180 3.07 4.070
+13          Merc 450SL 17.3   8 275.8 180 3.07 3.730
+14         Merc 450SLC 15.2   8 275.8 180 3.07 3.780
+15  Cadillac Fleetwood 10.4   8 472.0 205 2.93 5.250
+16 Lincoln Continental 10.4   8 460.0 215 3.00 5.424
+17   Chrysler Imperial 14.7   8 440.0 230 3.23 5.345
+22    Dodge Challenger 15.5   8 318.0 150 2.76 3.520
+23         AMC Javelin 15.2   8 304.0 150 3.15 3.435
+24          Camaro Z28 13.3   8 350.0 245 3.73 3.840
+25    Pontiac Firebird 19.2   8 400.0 175 3.08 3.845
+29      Ford Pantera L 15.8   8 351.0 264 4.22 3.170
+30        Ferrari Dino 19.7   6 145.0 175 3.62 2.770
+31       Maserati Bora 15.0   8 301.0 335 3.54 3.570
+    qsec vs am gear carb
+1  16.46  0  1    4    4
+2  17.02  0  1    4    4
+4  19.44  1  0    3    1
+5  17.02  0  0    3    2
+6  20.22  1  0    3    1
+7  15.84  0  0    3    4
+10 18.30  1  0    4    4
+11 18.90  1  0    4    4
+12 17.40  0  0    3    3
+13 17.60  0  0    3    3
+14 18.00  0  0    3    3
+15 17.98  0  0    3    4
+16 17.82  0  0    3    4
+17 17.42  0  0    3    4
+22 16.87  0  0    3    2
+23 17.30  0  0    3    2
+24 15.41  0  0    3    4
+25 17.05  0  0    3    2
+29 14.50  0  1    5    4
+30 15.50  0  1    5    6
+31 14.60  0  1    5    8
+
+> cat("\n", "11) Display all data for cars having greater than 4 cylinders *and* greater than 4 gears:","\n")
+
+ 11) Display all data for cars having greater than 4 cylinders *and* greater than 4 gears: 
+
+> mtcars[mtcars$cyl>4 &mtcars$gear>4,]
+                X  mpg cyl disp  hp drat   wt qsec vs am
+29 Ford Pantera L 15.8   8  351 264 4.22 3.17 14.5  0  1
+30   Ferrari Dino 19.7   6  145 175 3.62 2.77 15.5  0  1
+31  Maserati Bora 15.0   8  301 335 3.54 3.57 14.6  0  1
+   gear carb
+29    5    4
+30    5    6
+31    5    8
+
+> cat("\n", "12) Display all cars having more than 4 cylinders *and* exactly 4 gears:","\n")
+
+ 12) Display all cars having more than 4 cylinders *and* exactly 4 gears: 
+
+> mtcars[mtcars$cyl>4 &mtcars$gear==4,]
+               X  mpg cyl  disp  hp drat    wt  qsec vs
+1      Mazda RX4 21.0   6 160.0 110 3.90 2.620 16.46  0
+2  Mazda RX4 Wag 21.0   6 160.0 110 3.90 2.875 17.02  0
+10      Merc 280 19.2   6 167.6 123 3.92 3.440 18.30  1
+11     Merc 280C 17.8   6 167.6 123 3.92 3.440 18.90  1
+   am gear carb
+1   1    4    4
+2   1    4    4
+10  0    4    4
+11  0    4    4
+
+> cat("\n", "13) Display all cars having more than 4 cylinders *or* exactly 4 gears:","\n")
+
+ 13) Display all cars having more than 4 cylinders *or* exactly 4 gears: 
+
+> mtcars[mtcars$cyl>4 |mtcars$gear==4,]
+                     X  mpg cyl  disp  hp drat    wt
+1            Mazda RX4 21.0   6 160.0 110 3.90 2.620
+2        Mazda RX4 Wag 21.0   6 160.0 110 3.90 2.875
+3           Datsun 710 22.8   4 108.0  93 3.85 2.320
+4       Hornet 4 Drive 21.4   6 258.0 110 3.08 3.215
+5    Hornet Sportabout 18.7   8 360.0 175 3.15 3.440
+6              Valiant 18.1   6 225.0 105 2.76 3.460
+7           Duster 360 14.3   8 360.0 245 3.21 3.570
+8            Merc 240D 24.4   4 146.7  62 3.69 3.190
+9             Merc 230 22.8   4 140.8  95 3.92 3.150
+10            Merc 280 19.2   6 167.6 123 3.92 3.440
+11           Merc 280C 17.8   6 167.6 123 3.92 3.440
+12          Merc 450SE 16.4   8 275.8 180 3.07 4.070
+13          Merc 450SL 17.3   8 275.8 180 3.07 3.730
+14         Merc 450SLC 15.2   8 275.8 180 3.07 3.780
+15  Cadillac Fleetwood 10.4   8 472.0 205 2.93 5.250
+16 Lincoln Continental 10.4   8 460.0 215 3.00 5.424
+17   Chrysler Imperial 14.7   8 440.0 230 3.23 5.345
+18            Fiat 128 32.4   4  78.7  66 4.08 2.200
+19         Honda Civic 30.4   4  75.7  52 4.93 1.615
+20      Toyota Corolla 33.9   4  71.1  65 4.22 1.835
+22    Dodge Challenger 15.5   8 318.0 150 2.76 3.520
+23         AMC Javelin 15.2   8 304.0 150 3.15 3.435
+24          Camaro Z28 13.3   8 350.0 245 3.73 3.840
+25    Pontiac Firebird 19.2   8 400.0 175 3.08 3.845
+26           Fiat X1-9 27.3   4  79.0  66 4.08 1.935
+29      Ford Pantera L 15.8   8 351.0 264 4.22 3.170
+30        Ferrari Dino 19.7   6 145.0 175 3.62 2.770
+31       Maserati Bora 15.0   8 301.0 335 3.54 3.570
+32          Volvo 142E 21.4   4 121.0 109 4.11 2.780
+    qsec vs am gear carb
+1  16.46  0  1    4    4
+2  17.02  0  1    4    4
+3  18.61  1  1    4    1
+4  19.44  1  0    3    1
+5  17.02  0  0    3    2
+6  20.22  1  0    3    1
+7  15.84  0  0    3    4
+8  20.00  1  0    4    2
+9  22.90  1  0    4    2
+10 18.30  1  0    4    4
+11 18.90  1  0    4    4
+12 17.40  0  0    3    3
+13 17.60  0  0    3    3
+14 18.00  0  0    3    3
+15 17.98  0  0    3    4
+16 17.82  0  0    3    4
+17 17.42  0  0    3    4
+18 19.47  1  1    4    1
+19 18.52  1  1    4    2
+20 19.90  1  1    4    1
+22 16.87  0  0    3    2
+23 17.30  0  0    3    2
+24 15.41  0  0    3    4
+25 17.05  0  0    3    2
+26 18.90  1  1    4    1
+29 14.50  0  1    5    4
+30 15.50  0  1    5    6
+31 14.60  0  1    5    8
+32 18.60  1  1    4    2
+
+> cat("\n", "14) Display all cars having more than 4 cylinders that do *not* have 4 gears:","\n")
+
+ 14) Display all cars having more than 4 cylinders that do *not* have 4 gears: 
+
+> mtcars[mtcars$cyl>4 &mtcars$gear!=4,]
+                     X  mpg cyl  disp  hp drat    wt
+4       Hornet 4 Drive 21.4   6 258.0 110 3.08 3.215
+5    Hornet Sportabout 18.7   8 360.0 175 3.15 3.440
+6              Valiant 18.1   6 225.0 105 2.76 3.460
+7           Duster 360 14.3   8 360.0 245 3.21 3.570
+12          Merc 450SE 16.4   8 275.8 180 3.07 4.070
+13          Merc 450SL 17.3   8 275.8 180 3.07 3.730
+14         Merc 450SLC 15.2   8 275.8 180 3.07 3.780
+15  Cadillac Fleetwood 10.4   8 472.0 205 2.93 5.250
+16 Lincoln Continental 10.4   8 460.0 215 3.00 5.424
+17   Chrysler Imperial 14.7   8 440.0 230 3.23 5.345
+22    Dodge Challenger 15.5   8 318.0 150 2.76 3.520
+23         AMC Javelin 15.2   8 304.0 150 3.15 3.435
+24          Camaro Z28 13.3   8 350.0 245 3.73 3.840
+25    Pontiac Firebird 19.2   8 400.0 175 3.08 3.845
+29      Ford Pantera L 15.8   8 351.0 264 4.22 3.170
+30        Ferrari Dino 19.7   6 145.0 175 3.62 2.770
+31       Maserati Bora 15.0   8 301.0 335 3.54 3.570
+    qsec vs am gear carb
+4  19.44  1  0    3    1
+5  17.02  0  0    3    2
+6  20.22  1  0    3    1
+7  15.84  0  0    3    4
+12 17.40  0  0    3    3
+13 17.60  0  0    3    3
+14 18.00  0  0    3    3
+15 17.98  0  0    3    4
+16 17.82  0  0    3    4
+17 17.42  0  0    3    4
+22 16.87  0  0    3    2
+23 17.30  0  0    3    2
+24 15.41  0  0    3    4
+25 17.05  0  0    3    2
+29 14.50  0  1    5    4
+30 15.50  0  1    5    6
+31 14.60  0  1    5    8
+
+> cat("\n", "15) Display total number of rows (only the number):","\n")
+
+ 15) Display total number of rows (only the number): 
+
+> nrow(mtcars)
+[1] 32
+
+> cat("\n", "16) Display total number of columns (only the number):","\n")
+
+ 16) Display total number of columns (only the number): 
+
+> ncol(mtcars)
+[1] 12
+
+> cat("\n", "17) Display total number of dimensions (i.e. rows and columns):","\n")
+
+ 17) Display total number of dimensions (i.e. rows and columns): 
+
+> dim(mtcars)
+[1] 32 12
+
+> cat("\n", "18) Display data frame structure - same as info in Python:","\n")
+
+ 18) Display data frame structure - same as info in Python: 
+
+> str(mtcars)
+'data.frame':	32 obs. of  12 variables:
+ $ X   : chr  "Mazda RX4" "Mazda RX4 Wag" "Datsun 710" "Hornet 4 Drive" ...
+ $ mpg : num  21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...
+ $ cyl : int  6 6 4 6 8 6 8 4 4 6 ...
+ $ disp: num  160 160 108 258 360 ...
+ $ hp  : int  110 110 93 110 175 105 245 62 95 123 ...
+ $ drat: num  3.9 3.9 3.85 3.08 3.15 2.76 3.21 3.69 3.92 3.92 ...
+ $ wt  : num  2.62 2.88 2.32 3.21 3.44 ...
+ $ qsec: num  16.5 17 18.6 19.4 17 ...
+ $ vs  : int  0 0 1 1 0 1 0 1 1 1 ...
+ $ am  : int  1 1 1 0 0 0 0 0 0 0 ...
+ $ gear: int  4 4 4 3 3 3 3 4 4 4 ...
+ $ carb: int  4 4 1 1 2 1 4 2 2 4 ...
+
+> cat("\n", "19) Get mean, median, minimum, maximum, quantiles, variance, and standard deviation of horsepower:","\n",
++     "Note: Remove any missing ..." ... [TRUNCATED] 
+
+ 19) Get mean, median, minimum, maximum, quantiles, variance, and standard deviation of horsepower: 
+ Note: Remove any missing values.
+
+> cat("\t","a. Mean: ")
+	 a. Mean: 
+> mean(mtcars$hp, na.rm=TRUE)
+[1] 146.6875
+
+> cat("\t", "b. Median: ")
+	 b. Median: 
+> median(mtcars$hp, na.rm=TRUE)
+[1] 123
+
+> cat("\t", "c. Min: ")
+	 c. Min: 
+> min(mtcars$hp, na.rm=TRUE)
+[1] 52
+
+> cat("\t", "d. Max: ")
+	 d. Max: 
+> max(mtcars$hp, na.rm=TRUE)
+[1] 335
+
+> cat("\t", "e. Quantile:\n")
+	 e. Quantile:
+
+> quantile(mtcars$hp, na.rm=TRUE)
+   0%   25%   50%   75%  100% 
+ 52.0  96.5 123.0 180.0 335.0 
+
+> cat("\t", "f. Variance: ")
+	 f. Variance: 
+> var(mtcars$hp, na.rm=TRUE)
+[1] 4700.867
+
+> cat("\t", "g. Standard Deviation: ")
+	 g. Standard Deviation: 
+> sd(mtcars$hp, na.rm=TRUE)
+[1] 68.56287
+
+> cat("\t", "20) summary() function prints min, max, mean, median, and quantiles (also, numbers of NA's, if any.):","\n")
+	 20) summary() function prints min, max, mean, median, and quantiles (also, numbers of NA's, if any.): 
+
+> summary(mtcars$hp, na.rm=TRUE)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   52.0    96.5   123.0   146.7   180.0   335.0 
+
+> cat("\t", "Two plots (*must* include *your* name in title): 1) Uses qplot(); 2) Uses plot()","\n")
+	 Two plots (*must* include *your* name in title): 1) Uses qplot(); 2) Uses plot() 
+
+> library(ggplot2)
+
+> png("plot_disp_and_mpg_1.png")
+
+> qplot(disp, mpg, data=mtcars,
++       xlab="Displacement",
++       ylab="MPG",
++       colour = cyl,
++       main = "Christopher Valverde: Displaceme ..." ... [TRUNCATED] 
+
+> png("plot_weight_and_mpg.png")
+
+> plot(mtcars$wt,mtcars$mpg,
++      main="Christopher Valverde: Weight vs MPG",
++      xlab="Weight in Thousands",
++      ylab="MPG",
++      las=1)
+
+> sink.reset <- function(){
++   for(i in seq_len(sink.number())){
++     sink(NULL)
++   }
++ }
+
+> sink.reset
+function(){
+  for(i in seq_len(sink.number())){
+    sink(NULL)
+  }
+}
